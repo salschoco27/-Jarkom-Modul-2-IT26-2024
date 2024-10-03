@@ -15,7 +15,7 @@ echo ';
 ; BIND data file for local loopback interface
 ;
 $TTL    604800
-@       IN      SOA     sudarsana.it26.com root.sudarsana.it26.com (
+@       IN      SOA     sudarsana.it26.com. root.sudarsana.it26.com. (
                               2         ; Serial
                          604800         ; Refresh
                           86400         ; Retry

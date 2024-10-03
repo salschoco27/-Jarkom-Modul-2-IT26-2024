@@ -1,11 +1,11 @@
-echo 'zone "pasopati.it26.com" {
+echo 'zone "2.246.192.in-addr.arpa" {
 type master; 
-file "/etc/bind/pasopati/pasopati.it26.com";
+file "/etc/bind/pasopati/2.246.192.in-addr.arpa";
 };' > /etc/bind/named.conf.local
 
 mkdir /etc/bind/pasopati
 
-cp /etc/bind/db.local /etc/bind/pasopati/pasopati.it26.com
+cp /etc/bind/db.local /etc/bind/pasopati/2.246.192.in-addr.arpa
 
 echo ';
 ;
@@ -19,8 +19,7 @@ $TTL    604800
                         2419200         ; Expire
                          604800 )       ; Negative Cache TTL
 ;
-@       IN      NS      pasopati.it26.com.
-@       IN      A       192.246.2.2     ;IP Kotalingga
-www     IN      CNAME   pasopati.it26.com.' > /etc/bind/pasopati/pasopati.it26.com
+2.246.192.in-addr.arpa.       IN      NS      pasopati.it26.com.
+2                             IN      PTR     pasopati.it26.com.' > /etc/bind/pasopati/2.246.192.in-addr.arpa
 
 service bind9 restart
