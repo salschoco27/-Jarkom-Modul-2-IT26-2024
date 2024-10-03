@@ -420,7 +420,7 @@ Markas pusat meminta **laporan hasil benchmark** dengan menggunakan apache bench
 - Analisis
 - Meme terbaik kalian (terserah ( ͡° ͜ʖ ͡°)) 🤓
 <br>[Script Soal 15](./soal%2015)
-
+[Analisa Hasil](./an)
 ### Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke **Solok** memakai **solok.xxxx.com** dengan alias **www.solok.xxxx.com** (sesuai web server terbaik hasil analisis kalian).
 <br>[Script Soal 16](./soal%2016)
