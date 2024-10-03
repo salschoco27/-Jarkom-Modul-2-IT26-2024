@@ -302,11 +302,11 @@ ns1 IN A 192.246.2.2
 panah IN NS ns1
 ```
 3. Ubah beberapa konfigurasi pada ```/etc/bind/named.conf.options```
-Comment pada dnssec-validation auto; dan
-Uncomment allow-query{any;};
-Restart bind9 dan lakukan hal yang sama seperti sebelumnya.
+<br>Comment pada dnssec-validation auto; dan
+<br>Uncomment allow-query{any;};
+<br>Restart bind9 dan lakukan hal yang sama seperti sebelumnya.
 
-5. Buat **panah.sh**
+4. Buat **panah.sh**
 ```
 echo 'zone "panah.pasopati.it26.com" {' >> /etc/bind/named.conf.local
 echo '	type master;' >> /etc/bind/named.conf.local
@@ -315,9 +315,9 @@ echo '};' >> /etc/bind/named.conf.local
 mkdir /etc/bind/panah
 cp /etc/bind/db.local /etc/bind/panah/panah.pasopati.it26.com
 ```
-6. Buka file dengan ```nano /etc/bind/panah/panah.pasopati.it26.com``` dan ubah agar menjadi seperti gambar dibawah.
+5. Buka file dengan ```nano /etc/bind/panah/panah.pasopati.it26.com``` dan ubah agar menjadi seperti gambar dibawah.
 ![image](https://github.com/user-attachments/assets/5db1ee73-b18c-4ef7-8056-534b064f94ff)
-7. Restart bind9 dan jalankan ```ping panah.pasopati.it26.com -c 5```
+6. Restart bind9 dan jalankan ```ping panah.pasopati.it26.com -c 5```
 ![image](https://github.com/user-attachments/assets/da459d87-b9ed-4f04-b54d-4adb136916bc)
 
 
@@ -327,8 +327,8 @@ cp /etc/bind/db.local /etc/bind/panah/panah.pasopati.it26.com
 Markas juga meminta catatan kapan saja meme brain rot akan dijatuhkan, maka buatlah subdomain baru di subdomain panah yaitu **log.panah.pasopati.xxxx.com** serta aliasnya **www.log.panah.pasopati.xxxx.com** yang juga mengarah ke **Kotalingga**.
 <br>[Script Soal 10](./soal%2010)
 1. Pada Majapahit ```nano /etc/bind/panah/panah.pasopati.it26.com``` tambahkan
-log IN A 192.246.2.2
-www.log IN A 192.246.2.2
+<br>log IN A 192.246.2.2
+<br>www.log IN A 192.246.2.2
 ![image](https://github.com/user-attachments/assets/c39b6f86-775e-46aa-9683-49ca6fcb8451)
 
 
