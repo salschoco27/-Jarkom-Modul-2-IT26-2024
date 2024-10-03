@@ -143,11 +143,34 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ## Pengerjaan Soal
 ### Soal 1
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), **Sriwijaya** membuat dua kotanya menjadi web server yaitu **Tanjungkulai,** dan **Bedahulu**, serta **Sriwijaya** sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, **Majapahit** memberikan bantuan dan menjadikan kerajaannya **(Majapahit)** menjadi **DNS Slave.** 
-<br>[Script Soal 1](./soal%201/)
+<br>[Script Soal 1](./soal%201/)<br>
+1. Buat script install.sh pada Sriwijaya dan Majapahit dan jalankan.
+```
+#!/bin/bash
+
+apt-get update
+apt-get install bind9 -y
+service bind9 start
+```
 
 ### Soal 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke **Solok** dengan alamat **sudarsana.xxxx.com** dengan alias **www.sudarsana.xxxx.com**, dimana **xxxx** merupakan kode kelompok. Contoh: sudarsana.it01.com.
-<br>[Script Soal 2](./soal%202)
+<br>[Script Soal 2](./soal%202)<br>
+1. Di Sriwijaya buat sudarsana.sh
+```
+echo 'zone "sudarsana.it26.com" {' >> /etc/bind/named.conf.local
+echo '	type master;' >> /etc/bind/named.conf.local
+echo '	file "/etc/bind/sudarsana/sudarsana.it26.com";' >> /etc/bind/named.conf.local
+echo '};' >> /etc/bind/named.conf.local
+
+mkdir /etc/bind/sudarsana
+cp /etc/bind/db.local /etc/bind/sudarsana/sudarsana.it26.com
+service bind9 restart
+```
+2. Jalankan ```nano /etc/bind/sudarsana/sudarsana.it26.com``` lalu ubah agar seperti gambar dibawah
+//GAMBAR
+
+
 
 ### Soal 3
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu **pasopati.xxxx.com** dengan alias **www.pasopati.xxxx.com** yang **mengarah ke Kotalingga.**
