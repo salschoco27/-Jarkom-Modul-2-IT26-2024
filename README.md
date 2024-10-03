@@ -329,6 +329,7 @@ Markas juga meminta catatan kapan saja meme brain rot akan dijatuhkan, maka buat
 1. Pada Majapahit ```nano /etc/bind/panah/panah.pasopati.it26.com``` tambahkan
 <br>log IN A 192.246.2.2
 <br>www.log IN A 192.246.2.2
+
 ![image](https://github.com/user-attachments/assets/c39b6f86-775e-46aa-9683-49ca6fcb8451)
 
 
