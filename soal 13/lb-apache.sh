@@ -11,9 +11,9 @@ service apache2 restart
 
 echo '<VirtualHost *:80>
     <Proxy balancer://mycluster>
-      BalancerMember http://192.241.4.2:80
-      BalancerMember http://192.241.4.3:80
-      BalancerMember http://192.241.4.4:80
+      BalancerMember http://192.246.2.2:80
+      BalancerMember http://192.246.2.3:80
+      BalancerMember http://192.246.2.4:80
     </Proxy>
     ProxyPreserveHost On
     ProxyPass / balancer://mycluster/
