@@ -16,7 +16,131 @@
 ## Topologi
 ![image](https://github.com/user-attachments/assets/fb989a13-7dfc-4c3e-92eb-ea457c38f189)
 
+## Setup Network
+IP setiap Node, selain nusantara:
+- Nusantara:
+  eth1: 192.246.1.1
+  eth2: 192.246.2.1
+  eth3: 192.246.3.1
+- Kotalingga 192.246.2.2
+- Bedahulu 192.246.2.3
+- Tanjungkulai 192.246.2.4
+- AlbertEinstein 192.246.2.5
+- Sriwijaya 192.246.3.2
+- Majapahit 192.246.1.2’
+- HayamWuruk 192.246.1.3
+- Solok 192.246.1.4
+- Srikandi 192.246.1.5
 
+### Nusantara
+```
+auto eth0
+iface eth0 inet dhcp
+
+auto eth1
+iface eth1 inet static
+	address 192.246.1.1
+	netmask 255.255.255.0
+
+auto eth2
+iface eth2 inet static
+	address 192.246.2.1
+	netmask 255.255.255.0
+
+auto eth3
+iface eth3 inet static
+	address 192.246.3.1
+	netmask 255.255.255.0
+
+up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.246.0.0/16
+```
+
+### Kotalingga
+``` auto eth0
+iface eth0 inet static
+	address 192.246.2.2
+	netmask 255.255.255.0
+	gateway 192.246.2.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+
+### Bedahulu
+``` auto eth0
+iface eth0 inet static
+	address 192.246.2.3
+	netmask 255.255.255.0
+	gateway 192.246.2.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Tanjungkulai
+``` auto eth0
+iface eth0 inet static
+	address 192.246.2.4
+	netmask 255.255.255.0
+	gateway 192.246.2.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Albert Einstein
+``` auto eth0
+iface eth0 inet static
+	address 192.246.2.5
+	netmask 255.255.255.0
+	gateway 192.246.2.1
+up echo nameserver 192.246.3.2 > /etc/resolv.conf
+up echo nameserver 192.246.1.2 > /etc/resolv.conf
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Sriwijaya
+``` auto eth0
+iface eth0 inet static
+	address 192.246.3.2
+	netmask 255.255.255.0
+	gateway 192.246.3.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Majapahit
+``` auto eth0
+iface eth0 inet static
+	address 192.246.1.2
+	netmask 255.255.255.0
+	gateway 192.246.1.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### HayamWuruk
+``` auto eth0
+iface eth0 inet static
+	address 192.246.1.3
+	netmask 255.255.255.0
+	gateway 192.246.1.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Solok
+``` auto eth0
+iface eth0 inet static
+	address 192.246.1.4
+	netmask 255.255.255.0
+	gateway 192.246.1.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+### Srikandi
+``` auto eth0
+iface eth0 inet static
+	address 192.246.1.5
+	netmask 255.255.255.0
+	gateway 192.246.1.1
+up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+
+## Pengerjaan Soal
 ### Soal 1
 Untuk mempersiapkan peperangan World War MMXXIV (Iya sebanyak itu), **Sriwijaya** membuat dua kotanya menjadi web server yaitu **Tanjungkulai,** dan **Bedahulu**, serta **Sriwijaya** sendiri akan menjadi DNS Master. Kemudian karena merasa terdesak, **Majapahit** memberikan bantuan dan menjadikan kerajaannya **(Majapahit)** menjadi **DNS Slave.** 
 <br>[Script Soal 1](./soal%201/)
