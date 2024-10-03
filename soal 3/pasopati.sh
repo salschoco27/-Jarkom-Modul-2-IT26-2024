@@ -1,7 +1,7 @@
 echo 'zone "pasopati.it26.com" {
 type master; 
 file "/etc/bind/pasopati/pasopati.it26.com";
-};' >> /etc/bind/named.conf.local
+};' > /etc/bind/named.conf.local
 
 mkdir /etc/bind/pasopati
 
@@ -20,7 +20,7 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      pasopati.it26.com.
-@       IN      A       192.246.2.2     ;IP Solok
+@       IN      A       192.246.2.2     ;IP Kotalingga
 www     IN      CNAME   pasopati.it26.com.' > /etc/bind/pasopati/pasopati.it26.com
 
 service bind9 restart
