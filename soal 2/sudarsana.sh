@@ -2,8 +2,8 @@ apt-get update
 apt-get install bind9 -y
 
 echo 'zone "sudarsana.it26.com" { 
-type master; 
-file "/etc/bind/sudarsana/sudarsana.it26.com";
+    type master; 
+    file "/etc/bind/sudarsana/sudarsana.it26.com";
 };' > /etc/bind/named.conf.local
 
 mkdir /etc/bind/sudarsana

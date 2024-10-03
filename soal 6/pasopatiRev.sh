@@ -1,6 +1,6 @@
 echo 'zone "2.246.192.in-addr.arpa" {
-type master; 
-file "/etc/bind/pasopati/2.246.192.in-addr.arpa";
+    type master; 
+    file "/etc/bind/pasopati/2.246.192.in-addr.arpa";
 };' > /etc/bind/named.conf.local
 
 mkdir /etc/bind/pasopati
