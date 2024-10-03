@@ -87,17 +87,17 @@ Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin ak
 <br>[Script Soal 16](./soal%2016)
 
 ### Soal 17
-Agar aman, buatlah konfigurasi agar solok.xxx.com hanya dapat diakses melalui port sebesar π x 10^4 = (phi nya desimal) dan 2000 + 2000 log 10 (10) +700 - π = ?.
+Agar aman, buatlah konfigurasi agar **solok.xxx.com** hanya dapat diakses melalui **port sebesar π x 10^4 = (phi nya desimal)** dan 2000 + 2000 log 10 (10) +700 - π = ?.
 <br>[Script Soal 17](./soal%2017)
 
 ### Soal 18
-Apa bila ada yang mencoba mengakses IP solok akan secara otomatis dialihkan ke www.solok.xxxx.com.
+Apa bila ada yang mencoba mengakses IP solok akan secara otomatis dialihkan ke **www.solok.xxxx.com.**
 <br>[Script Soal 18](./soal%2018)
 
 ### Soal 19
-Karena probset sudah kehabisan ide masuk ke salah satu worker buatkan akses direktori listing yang mengarah ke resource worker2.
-<br>[Script Soal 17](./soal%2019)
+Karena probset sudah kehabisan ide masuk ke **salah satu** worker buatkan akses direktori listing yang mengarah ke resource worker2.
+<br>[Script Soal 19](./soal%2019)
 
 ### Soal 20
-Worker tersebut harus dapat di akses dengan sekiantterimakasih.xxxx.com dengan alias www.sekiantterimakasih.xxxx.com.
-<br>[Script Soal 17](./soal%2020)
+Worker tersebut harus dapat di akses dengan **sekiantterimakasih.xxxx.com** dengan alias **www.sekiantterimakasih.xxxx.com**.
+<br>[Script Soal 20](./soal%2020)
