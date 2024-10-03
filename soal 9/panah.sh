@@ -45,7 +45,7 @@ $TTL    604800
 ;
 @       IN      NS      panah.pasopati.it26.com.
 @       IN      A       192.246.2.2     ;IP Kotalingga
-www     IN      A       192.246.2.2     ;IP Kotalingga
+www     IN      CNAME   panah.pasopati.it26.com.
 @       IN      AAAA    ::1' > /etc/bind/panah/panah.pasopati.it26.com
 
 service bind9 restart
