@@ -5,31 +5,12 @@ echo 'options {
     listen-on-v6 { any; };
 };' > /etc/bind/named.conf.options
 
-echo 'zone "sudarsana.it26.com" {
-    type master; 
-    also-notify { 192.246.1.2; }; // IP Majapahit
-    allow-transfer { 192.246.1.2; }; // IP Majapahit
-    file "/etc/bind/sudarsana/sudarsana.it26.com";
-};
-
-zone "pasopati.it26.com" {
-    type master; 
-    also-notify { 192.246.1.2; }; // IP Majapahit
-    allow-transfer { 192.246.1.2; }; // IP Majapahit
-    file "/etc/bind/pasopati/pasopati.it26.com";
-};
-
-zone "rujapala.it26.com" {
-    type master; 
-    also-notify { 192.246.1.2; }; // IP Majapahit
-    allow-transfer { 192.246.1.2; }; // IP Majapahit
-    file "/etc/bind/rujapala/rujapala.it26.com";
-};
-
-zone "panah.pasopati.it26.com" {
+echo 'zone "panah.pasopati.it26.com" {
     type master;
     file "/etc/bind/panah/panah.pasopati.it26.com";
-};' > /etc/bind/named.conf.local
+};' >> /etc/bind/named.conf.local
+
+mkdir /etc/bind/panah
 
 echo ';
 ;

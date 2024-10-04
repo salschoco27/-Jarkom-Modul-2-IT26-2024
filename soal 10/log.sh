@@ -1,4 +1,4 @@
-mkdir /etc/bind/panah
+mkdir -p /etc/bind/panah
 
 echo ';
 ;
@@ -17,3 +17,5 @@ $TTL    604800
 www     IN      CNAME   panah.pasopati.it26.com.
 log     IN      A       192.246.2.2     ;IP Kotalingga
 www.log IN      CNAME   panah.pasopati.it26.com.' > /etc/bind/panah/panah.pasopati.it26.com
+
+service bind9 restart

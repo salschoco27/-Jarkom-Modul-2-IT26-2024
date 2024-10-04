@@ -15,3 +15,5 @@ $TTL    604800
 www     IN      CNAME   sudarsana.it26.com.
 cakra   IN      A       192.246.2.3     ;IP Bedahulu
 @       IN      AAAA    ::1' > /etc/bind/sudarsana/sudarsana.it26.com
+
+service bind9 restart
