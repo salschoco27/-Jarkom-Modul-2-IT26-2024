@@ -411,6 +411,9 @@ service apache2 status
 ### Soal 14
 Selama melakukan penjarahan mereka melihat bagaimana web server luar negeri, hal ini membuat mereka iri, dengki, sirik dan ingin flexing sehingga meminta agar web server dan load balancer nya **diubah menjadi nginx.**
 <br>[Script Soal 14](./soal%2014)
+1. Perbarui script pada webserver menjadi seperti yang ada di file berikut [Script Soal 14](./soal%2014)
+2. Ubah konfigurasi pada load balancer menjadi seperti yang ada di file berikut [Script Soal 14](./soal%2014)
+3. Lakukan percobaan pada salah satu client menggunakan ```lynx 192.246.```.
 
 ### Soal 15
 Markas pusat meminta **laporan hasil benchmark** dengan menggunakan apache benchmark dari load balancer dengan 2 web server yang berbeda tersebut dan meminta secara detail dengan ketentuan:
@@ -421,9 +424,13 @@ Markas pusat meminta **laporan hasil benchmark** dengan menggunakan apache bench
 - Meme terbaik kalian (terserah ( ͡° ͜ʖ ͡°)) 🤓
 <br>[Script Soal 15](./soal%2015)
 [Analisa Hasil](./laporan%20analisa)
+1. Install apache2-utils menggunakan ```apt-get install apache2-utils -y```
+2. Jalankan ```ab -n 1000 -c 100 http://``` untuk melihat hasil
+
 ### Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke **Solok** memakai **solok.xxxx.com** dengan alias **www.solok.xxxx.com** (sesuai web server terbaik hasil analisis kalian).
 <br>[Script Soal 16](./soal%2016)
+1. Ubah konfigurasi **pada solok.sh** seperti pada link diatas
 
 ### Soal 17
 Agar aman, buatlah konfigurasi agar **solok.xxx.com** hanya dapat diakses melalui **port sebesar π x 10^4 = (phi nya desimal)** dan 2000 + 2000 log 10 (10) +700 - π = ?.
