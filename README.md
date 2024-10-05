@@ -25,11 +25,11 @@
 ![image](https://github.com/user-attachments/assets/fb989a13-7dfc-4c3e-92eb-ea457c38f189)
 
 ## Setup Network
-IP setiap Node, selain nusantara:
+IP setiap Node:
 - Nusantara:
-  eth1: 192.246.1.1
-  eth2: 192.246.2.1
-  eth3: 192.246.3.1
+    - eth1: 192.246.1.1
+    - eth2: 192.246.2.1
+    - eth3: 192.246.3.1
 - Kotalingga 192.246.2.2
 - Bedahulu 192.246.2.3
 - Tanjungkulai 192.246.2.4
@@ -64,7 +64,8 @@ up iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.246.0.0/16
 ```
 
 ### Kotalingga
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.2.2
 	netmask 255.255.255.0
@@ -74,7 +75,8 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 
 
 ### Bedahulu
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.2.3
 	netmask 255.255.255.0
@@ -83,7 +85,8 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Tanjungkulai
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.2.4
 	netmask 255.255.255.0
@@ -92,18 +95,17 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Albert Einstein
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.2.5
 	netmask 255.255.255.0
 	gateway 192.246.2.1
-up echo nameserver 192.246.3.2 > /etc/resolv.conf
-up echo nameserver 192.246.1.2 > /etc/resolv.conf
-up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Sriwijaya
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.3.2
 	netmask 255.255.255.0
@@ -112,7 +114,8 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Majapahit
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.1.2
 	netmask 255.255.255.0
@@ -121,16 +124,17 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### HayamWuruk
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.1.3
 	netmask 255.255.255.0
 	gateway 192.246.1.1
-up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Solok
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.1.4
 	netmask 255.255.255.0
@@ -139,12 +143,12 @@ up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 ### Srikandi
-``` auto eth0
+``` 
+auto eth0
 iface eth0 inet static
 	address 192.246.1.5
 	netmask 255.255.255.0
 	gateway 192.246.1.1
-up echo nameserver 192.168.122.1 > /etc/resolv.conf
 ```
 
 
@@ -160,7 +164,7 @@ apt-get update
 apt-get install bind9 -y
 service bind9 start
 ```
-2. Buat script client.sh dan jalankan.
+2. Buat script client.sh dan jalankan di setiap client **AlbertEinstein**, **HayamWuruk**, **Srikandi**
 ```
 echo -e 'nameserver 192.246.3.2
 nameserver 192.246.1.2
@@ -174,7 +178,8 @@ apt-get install lynx -y
 ### Soal 2
 Karena para pasukan membutuhkan koordinasi untuk melancarkan serangannya, maka buatlah sebuah domain yang mengarah ke **Solok** dengan alamat **sudarsana.xxxx.com** dengan alias **www.sudarsana.xxxx.com**, dimana **xxxx** merupakan kode kelompok. Contoh: sudarsana.it01.com.
 <br>[Script Soal 2](./soal%202)<br>
-1. Di Sriwijaya buat **sudarsana.sh**
+
+Di Sriwijaya buat **sudarsana.sh**
 ```
 apt-get update
 apt-get install bind9 -y
@@ -209,12 +214,11 @@ service bind9 restart
 ![image](https://github.com/user-attachments/assets/8066d24c-5550-49a8-af32-30206673ebd2)
 
 
-
-
 ### Soal 3
 Para pasukan juga perlu mengetahui mana titik yang akan diserang, sehingga dibutuhkan domain lain yaitu **pasopati.xxxx.com** dengan alias **www.pasopati.xxxx.com** yang **mengarah ke Kotalingga.**
 <br>[Script Soal 3](./soal%203)
-1. Di Sriwijaya buat **pasopati.sh**
+
+Di Sriwijaya buat **pasopati.sh**
 ```
 echo 'zone "pasopati.it26.com" {
     type master; 
@@ -243,14 +247,13 @@ www     IN      CNAME   pasopati.it26.com.' > /etc/bind/pasopati/pasopati.it26.c
 
 service bind9 restart
 ```
-![image](https://github.com/user-attachments/assets/e33b0ed2-5666-4fd7-95eb-9091f9ddbafe)
-
-
+![Soal 3](./image/Soal%203.png)
 
 ### Soal 4
 Markas pusat meminta dibuatnya domain khusus untuk menaruh informasi persenjataan dan suplai yang tersebar. Informasi dan suplai meme terbaru tersebut **mengarah ke Tanjungkulai** dan domain yang ingin digunakan adalah **rujapala.xxxx.com** dengan alias **www.rujapala.xxxx.com.**
 <br>[Script Soal 4](./soal%204)
-1. Di Sriwijaya buat **rujapala.sh**
+
+Di Sriwijaya buat **rujapala.sh**
 ```
 echo 'zone "rujapala.it26.com" {
     type master; 
@@ -285,7 +288,7 @@ service bind9 restart
 ### Soal 5
 Pastikan domain-domain tersebut dapat diakses oleh **seluruh komputer (client)** yang berada di **Nusantara.**
 <br>[Script Soal 5](./soal%205)
-1. Di Nusantara buat **tesping.sh**.
+1. Di **Semua Client** buat **tesping.sh**.
 ```
 ping sudarsana.it26.com -c 1
 ping www.sudarsana.it26.com -c 1
@@ -295,7 +298,7 @@ ping rujapala.it26.com -c 1
 ping www.rujapala.it26.com -c 1
 ```
 2. Jalankan **tesping.sh** untuk mengecek.
-
+![image](./image/Soal%205.png)
 
 ### Soal 6
 Beberapa daerah memiliki keterbatasan yang menyebabkan **hanya dapat** mengakses domain secara langsung melalui **alamat IP** domain tersebut. Karena daerah tersebut tidak diketahui secara spesifik, pastikan semua komputer (client) dapat mengakses domain **pasopati.xxxx.com** melalui **alamat IP Kotalingga** (Notes: menggunakan pointer record).
@@ -328,9 +331,19 @@ $TTL    604800
 
 service bind9 restart
 ```
-3. Install dnsutils pada salah satu client. ```apt-get update<br>apt-get install dnsutils```.
-4. Arahkan nameserver ke Sriwijaya (192.246.3.2) ```echo 'nameserver 192.246.3.2' >> /etc/resolv.conf```.
-5. Jalankan ```host -t PTR 192.246.2.2```.
+![image](./image/Soal%206.png)
+2. Install dnsutils pada salah satu client.
+```
+apt-get update
+apt-get install dnsutils
+```
+3. Arahkan nameserver ke Sriwijaya (192.246.3.2)
+```
+echo 'nameserver 192.246.3.2' >> /etc/resolv.conf
+```
+4. Jalankan `host -t PTR 192.246.2.2` di client.
+
+![image](./image/Soal%206_2.png)
 
 ### Soal 7
 Akhir-akhir ini seringkali terjadi **serangan brainrot** ke DNS Server Utama, sebagai tindakan antisipasi kamu diperintahkan untuk membuat **DNS Slave di Majapahit** untuk **semua domain** yang sudah dibuat sebelumnya yang mengarah ke **Sriwijaya.**
@@ -360,8 +373,8 @@ zone "rujapala.it26.com" {
 
 service bind9 restart
 ```
-2. Restart bind ```service bind9 restart```
-3. Di Majapahit buat **slave.sh**
+
+2. Di Majapahit buat **slave.sh**
 ```
 apt-get update
 apt-get install bind9 -y
@@ -387,7 +400,7 @@ zone "rujapala.it26.com" {
 service bind9 restart
 ```
 4. Pada client tambahkan Nameserver Majapahit (192.246.1.2) sebagai slave.
-5. Tes DNS Slave menggunakan ```ping sudarsana.it26.com```.
+5. Tes DNS Slave menggunakan ```ping sudarsana.it26.com``` setelah mematikan service bind9 pada Sriwijaya dengan `service bind9 stop`.
 
 
 ### Soal 8
@@ -545,8 +558,8 @@ Setelah pertempuran mereda, warga IT dapat kembali mengakses jaringan luar dan m
 echo 'options {
     directory "/var/cache/bind";
     forwarders {
-        192.168.122.1 // IP Nusantara
-    }
+        192.168.122.1; // IP Nusantara
+    };
     allow-query{ any; };
     auth-nxdomain no;
     listen-on-v6 { any; };
@@ -556,7 +569,7 @@ echo 'options {
 ### Soal 12
 Karena pusat ingin sebuah laman web yang ingin digunakan untuk memantau kondisi kota lainnya maka deploy laman web ini (cek resource yg lb) pada **Kotalingga** menggunakan **apache**.
 <br>[Script Soal 12](./soal%2012)
-1. Pada Kotalingga gunakan script ini dengan **web.sh**
+1. Pada Kotalingga buat script  **web.sh**
 ```
 apt-get update
 apt-get install wget -y
@@ -590,6 +603,7 @@ apt-get install lynx -y
 apt-get install libapache2-mod-php7.0 -y
 ```
 3. Akses dengan ```lynx 192.246.2.2/index.php```
+![image](./image/Soal%2012.png)
 
 ### Soal 13
 Karena Sriwijaya dan Majapahit memenangkan pertempuran ini dan memiliki banyak uang dari hasil penjarahan (sebanyak 35 juta, belum dipotong pajak) maka pusat meminta kita memasang load balancer untuk membagikan uangnya pada web nya, dengan **Kotalingga, Bedahulu, Tanjungkulai** sebagai worker dan **Solok** sebagai **Load Balancer** menggunakan apache sebagai web server nya dan load balancer nya.
@@ -837,10 +851,11 @@ Markas pusat meminta **laporan hasil benchmark** dengan menggunakan apache bench
 - Grafik request per second untuk masing masing algoritma. 
 - Analisis
 - Meme terbaik kalian (terserah ( ͡° ͜ʖ ͡°)) 🤓
-<br>[Script Soal 15](./soal%2015)
-[Analisa Hasil](./laporan%20analisa)
+
 1. Install apache2-utils menggunakan ```apt-get install apache2-utils -y```
-2. Jalankan ```ab -n 1000 -c 100 http://``` untuk melihat hasil
+2. Jalankan ```ab -n 1000 -c 100 http://[ip load balancer]``` untuk melihat hasil
+
+Hasil Analisis dapat dilihat pada laporan berikut [Analisa Hasil](./laporan%20analisa)
 
 ### Soal 16
 Karena dirasa kurang aman dari brainrot karena masih memakai IP, markas ingin akses ke **Solok** memakai **solok.xxxx.com** dengan alias **www.solok.xxxx.com** (sesuai web server terbaik hasil analisis kalian).
@@ -987,3 +1002,4 @@ www     IN      CNAME   sekiantterimakasih.it26.com.' > /etc/bind/it26/sekiantte
 
 service bind9 restart
 ```
+![image](./image/Soal%2020.png)
