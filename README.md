@@ -20,6 +20,8 @@
 [Soal 16](#soal-16)<br>
 [Soal 17](#soal-17)<br>
 [Soal 18](#soal-18)<br>
+[Soal 19](#soal-19)<br>
+[Soal 20](#soal-20)
 
 ## Topologi
 ![image](https://github.com/user-attachments/assets/fb989a13-7dfc-4c3e-92eb-ea457c38f189)
